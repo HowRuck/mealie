@@ -78,6 +78,7 @@ RUN echo "crfpp-container"
 # Production Image
 ###############################################
 FROM python-base as production
+LABEL org.opencontainers.image.source="https://github.com/mealie-recipes/mealie"
 ENV PRODUCTION=true
 ENV TESTING=false
 
@@ -130,7 +131,6 @@ HEALTHCHECK CMD python $MEALIE_HOME/mealie/scripts/healthcheck.py || exit 1
 # ----------------------------------
 # Copy Frontend
 
-# copying caddy into image
 ENV STATIC_FILES=/spa/static
 COPY --from=builder /app/dist  ${STATIC_FILES}
 

@@ -33,9 +33,9 @@
     </template>
     <template #item.userId="{ item }">
       <v-list-item class="justify-start">
-        <UserAvatar :user-id="item.userId" size="40" />
-        <v-list-item-content>
-          <v-list-item-title>
+        <UserAvatar :user-id="item.userId" :tooltip="false" size="40" />
+        <v-list-item-content class="pl-2">
+          <v-list-item-title class="text-left">
             {{ getMember(item.userId) }}
           </v-list-item-title>
         </v-list-item-content>
@@ -153,7 +153,7 @@ export default defineComponent({
     async function refreshMembers() {
       const { data } = await api.groups.fetchMembers();
       if (data) {
-        members.value = data;
+        members.value = data.items;
       }
     }
 

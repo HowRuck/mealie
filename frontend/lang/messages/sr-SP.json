@@ -182,6 +182,7 @@
     "date": "Датум",
     "id": "Ид",
     "owner": "Власник",
+    "change-owner": "Change Owner",
     "date-added": "Датум додавања",
     "none": "Ниједно",
     "run": "Покрени",
@@ -212,7 +213,11 @@
     "clipboard-copy-failure": "Failed to copy to the clipboard.",
     "confirm-delete-generic-items": "Are you sure you want to delete the following items?",
     "organizers": "Organizers",
-    "caution": "Caution"
+    "caution": "Caution",
+    "show-advanced": "Show Advanced",
+    "add-field": "Add Field",
+    "date-created": "Date Created",
+    "date-updated": "Date Updated"
   },
   "group": {
     "are-you-sure-you-want-to-delete-the-group": "Да ли сте сигурни да желите да обришете <b>{groupName}<b/>?",
@@ -351,7 +356,7 @@
     "for-type-meal-types": "for {0} meal types",
     "meal-plan-rules": "Meal Plan Rules",
     "new-rule": "Ново правило",
-    "meal-plan-rules-description": "Можете креирати правила за аутоматски избор рецепата за ваше јеловнике. Ова правила користи сервер за одређивање случајног сета рецепата из којег ће бити изабране при креирању јеловника. Обратите пажњу да ако правила имају исто ограничење дана/типа, категорије правила ће бити спојене. У пракси, није потребно креирати дупла правила, али је могуће то учинити.",
+    "meal-plan-rules-description": "You can create rules for auto selecting recipes for your meal plans. These rules are used by the server to determine the random pool of recipes to select from when creating meal plans. Note that if rules have the same day/type constraints then the rule filters will be merged. In practice, it's unnecessary to create duplicate rules, but it's possible to do so.",
     "new-rule-description": "При креирању новог правила за јеловник, можете ограничити примену правила на одређени дан у недељи и/или на одређени тип оброка. Како бисте применили правило на све дане или све типове оброка, можете поставити правило на 'Било који', што ће га применити на све могуће вредности за дан и/или тип оброка.",
     "recipe-rules": "Правила за рецепт",
     "applies-to-all-days": "Applies to all days",
@@ -426,6 +431,7 @@
     "paste-in-your-recipe-data-each-line-will-be-treated-as-an-item-in-a-list": "Налепите ваше податке о рецепту. Свака линија ће бити третирана као ставка на списку",
     "recipe-markup-specification": "Recipe Markup Specification",
     "recipe-url": "Recipe URL",
+    "recipe-html-or-json": "Recipe HTML or JSON",
     "upload-a-recipe": "Upload a Recipe",
     "upload-individual-zip-file": "Upload an individual .zip file exported from another Mealie instance.",
     "url-form-hint": "Копирајте и налепите везу са вашег омиљеног сајта за рецепте",
@@ -460,6 +466,7 @@
     "calories-suffix": "calories",
     "carbohydrate-content": "Carbohydrate",
     "categories": "Категорије",
+    "cholesterol-content": "Cholesterol",
     "comment-action": "Comment",
     "comment": "Comment",
     "comments": "Comments",
@@ -506,6 +513,7 @@
     "recipe-updated": "Recipe updated",
     "remove-from-favorites": "Уклони из омиљених",
     "remove-section": "Remove Section",
+    "saturated-fat-content": "Saturated fat",
     "save-recipe-before-use": "Save recipe before use",
     "section-title": "Section Title",
     "servings": "Servings",
@@ -516,7 +524,9 @@
     "sugar-content": "Sugar",
     "title": "Title",
     "total-time": "Укупно времена",
+    "trans-fat-content": "Trans-fat",
     "unable-to-delete-recipe": "Unable to Delete Recipe",
+    "unsaturated-fat-content": "Unsaturated fat",
     "no-recipe": "No Recipe",
     "locked-by-owner": "Locked by Owner",
     "join-the-conversation": "Join the Conversation",
@@ -604,10 +614,16 @@
     "scrape-recipe-description": "Scrape a recipe by url. Provide the url for the site you want to scrape, and Mealie will attempt to scrape the recipe from that site and add it to your collection.",
     "scrape-recipe-have-a-lot-of-recipes": "Have a lot of recipes you want to scrape at once?",
     "scrape-recipe-suggest-bulk-importer": "Try out the bulk importer",
+    "scrape-recipe-have-raw-html-or-json-data": "Have raw HTML or JSON data?",
+    "scrape-recipe-you-can-import-from-raw-data-directly": "You can import from raw data directly",
     "import-original-keywords-as-tags": "Увези оригиналне кључне речи као ознаке",
     "stay-in-edit-mode": "Stay in Edit mode",
     "import-from-zip": "Увези из Zip архиве",
     "import-from-zip-description": "Import a single recipe that was exported from another Mealie instance.",
+    "import-from-html-or-json": "Import from HTML or JSON",
+    "import-from-html-or-json-description": "Import a single recipe from raw HTML or JSON. This is useful if you have a recipe from a site that Mealie can't scrape normally, or from some other external source.",
+    "json-import-format-description-colon": "To import via JSON, it must be in valid format:",
+    "json-editor": "JSON Editor",
     "zip-files-must-have-been-exported-from-mealie": ".zip files must have been exported from Mealie",
     "create-a-recipe-by-uploading-a-scan": "Направи рецепт учитавањем скениране слике.",
     "upload-a-png-image-from-a-recipe-book": "Upload a png image from a recipe book",
@@ -645,7 +661,8 @@
       "missing-unit": "Create missing unit: {unit}",
       "missing-food": "Create missing food: {food}",
       "no-food": "No Food"
-    }
+    },
+    "reset-servings-count": "Reset Servings Count"
   },
   "search": {
     "advanced-search": "Напредна претрага",
@@ -1254,7 +1271,9 @@
     "debug-openai-services": "Debug OpenAI Services",
     "debug-openai-services-description": "Use this page to debug OpenAI services. You can test your OpenAI connection and see the results here. If you have image services enabled, you can also provide an image.",
     "run-test": "Run Test",
-    "test-results": "Test Results"
+    "test-results": "Test Results",
+    "group-delete-note": "Groups with users or households cannot be deleted",
+    "household-delete-note": "Households with users cannot be deleted"
   },
   "profile": {
     "welcome-user": "👋 Welcome, {0}!",
@@ -1307,7 +1326,7 @@
   },
   "cookbook": {
     "cookbooks": "Кувари",
-    "description": "Кувари су још један начин за организовање рецепата креирањем пресека рецепата и ознака. Креирање кувара додаће ставку на бочну траку и све рецепте са изабраним ознакама и категоријама биће приказане у кувару.",
+    "description": "Cookbooks are another way to organize recipes by creating cross sections of recipes, organizers, and other filters. Creating a cookbook will add an entry to the side-bar and all the recipes with the filters chosen will be displayed in the cookbook.",
     "public-cookbook": "Јавни кувар",
     "public-cookbook-description": "Public Cookbooks can be shared with non-mealie users and will be displayed on your groups page.",
     "filter-options": "Опције филтера",
@@ -1320,5 +1339,28 @@
     "household-cookbook-name": "{0} Cookbook {1}",
     "create-a-cookbook": "Create a Cookbook",
     "cookbook": "Cookbook"
+  },
+  "query-filter": {
+    "logical-operators": {
+      "and": "AND",
+      "or": "OR"
+    },
+    "relational-operators": {
+      "equals": "equals",
+      "does-not-equal": "does not equal",
+      "is-greater-than": "is greater than",
+      "is-greater-than-or-equal-to": "is greater than or equal to",
+      "is-less-than": "is less than",
+      "is-less-than-or-equal-to": "is less than or equal to"
+    },
+    "relational-keywords": {
+      "is": "is",
+      "is-not": "is not",
+      "is-one-of": "is one of",
+      "is-not-one-of": "is not one of",
+      "contains-all-of": "contains all of",
+      "is-like": "is like",
+      "is-not-like": "is not like"
+    }
   }
 }

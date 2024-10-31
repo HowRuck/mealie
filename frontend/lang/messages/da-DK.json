@@ -182,6 +182,7 @@
     "date": "Dato",
     "id": "Id",
     "owner": "Ejer",
+    "change-owner": "Change Owner",
     "date-added": "Oprettelsesdato",
     "none": "Ingen",
     "run": "Start",
@@ -212,7 +213,11 @@
     "clipboard-copy-failure": "Kopiering til udklipsholderen mislykkedes.",
     "confirm-delete-generic-items": "Er du sikker på at du ønsker at slette de valgte emner?",
     "organizers": "Organisatorer",
-    "caution": "Bemærk"
+    "caution": "Bemærk",
+    "show-advanced": "Show Advanced",
+    "add-field": "Add Field",
+    "date-created": "Date Created",
+    "date-updated": "Date Updated"
   },
   "group": {
     "are-you-sure-you-want-to-delete-the-group": "Er du sikker på, du vil slette <b>{groupName}<b/>?",
@@ -351,7 +356,7 @@
     "for-type-meal-types": "for {0} måltidstyper",
     "meal-plan-rules": "Regler for madplanlægning",
     "new-rule": "Ny Regel",
-    "meal-plan-rules-description": "Du kan oprette regler for automatisk valg af opskrifter til dine måltidsplaner. Disse regler bruges af Mealie til at udvælge de opskrifter, som der skal vælges tilfældigt imellem, når du opretter madplaner. Bemærk, at hvis reglerne har samme dag/type begrænsninger, så vil kategorierne af reglerne blive sammenlagt. I praksis er det unødvendigt at skabe dobbelte regler, men det er muligt at gøre det.",
+    "meal-plan-rules-description": "You can create rules for auto selecting recipes for your meal plans. These rules are used by the server to determine the random pool of recipes to select from when creating meal plans. Note that if rules have the same day/type constraints then the rule filters will be merged. In practice, it's unnecessary to create duplicate rules, but it's possible to do so.",
     "new-rule-description": "Når du opretter en ny regel for en madplan, kan du begrænse reglen til at være gældende for en bestemt dag i ugen og/eller en bestemt måltidstype. For at anvende en regel for alle dage eller alle måltider typer kan du indstille reglen til \"Any\", som vil anvende den til alle mulige værdier for dag og/eller måltid.",
     "recipe-rules": "Opskriftsregler",
     "applies-to-all-days": "Gælder for alle dage",
@@ -426,6 +431,7 @@
     "paste-in-your-recipe-data-each-line-will-be-treated-as-an-item-in-a-list": "Indsæt dine opskriftsdata. \nHver linje behandles som et element på en liste",
     "recipe-markup-specification": "Opskriftsmarkupspecifikation",
     "recipe-url": "URL på opskrift",
+    "recipe-html-or-json": "Recipe HTML or JSON",
     "upload-a-recipe": "Upload en opskrift",
     "upload-individual-zip-file": "Opload en individuel .zip-fil, eksporteret fra en anden Mealie-instans.",
     "url-form-hint": "Kopiér og indsæt et link fra din foretrukne opskrifts hjemmeside",
@@ -460,6 +466,7 @@
     "calories-suffix": "kalorier",
     "carbohydrate-content": "Kulhydrat",
     "categories": "Kategorier",
+    "cholesterol-content": "Cholesterol",
     "comment-action": "Kommentar",
     "comment": "Kommentar",
     "comments": "Kommentarer",
@@ -506,6 +513,7 @@
     "recipe-updated": "Opskrift opdateret",
     "remove-from-favorites": "Fjern fra favoritter",
     "remove-section": "Fjern sektion",
+    "saturated-fat-content": "Saturated fat",
     "save-recipe-before-use": "Gem opskrift før brug",
     "section-title": "Sektionstitel",
     "servings": "Portioner",
@@ -516,7 +524,9 @@
     "sugar-content": "Sukker",
     "title": "Titel",
     "total-time": "Total tid",
+    "trans-fat-content": "Trans-fat",
     "unable-to-delete-recipe": "Kunne ikke slette opskrift",
+    "unsaturated-fat-content": "Unsaturated fat",
     "no-recipe": "Ingen opskrift",
     "locked-by-owner": "Låst af ejer",
     "join-the-conversation": "Deltag i samtalen",
@@ -604,10 +614,16 @@
     "scrape-recipe-description": "Hent en opskrift fra en hjemmeside. Angiv URL'en til den hjemmeside, du vil hente data fra, og Mealie vil forsøge at hente opskriften og tilføje den til din samling.",
     "scrape-recipe-have-a-lot-of-recipes": "Har du en masse opskrifter, du ønsker at scrappe på en gang?",
     "scrape-recipe-suggest-bulk-importer": "Prøv masse import",
+    "scrape-recipe-have-raw-html-or-json-data": "Have raw HTML or JSON data?",
+    "scrape-recipe-you-can-import-from-raw-data-directly": "You can import from raw data directly",
     "import-original-keywords-as-tags": "Importér originale nøgleord som mærker",
     "stay-in-edit-mode": "Bliv i redigeringstilstand",
     "import-from-zip": "Importer fra zip-fil",
     "import-from-zip-description": "Importer en enkelt opskrift, der blev eksporteret fra en anden Mealie instans.",
+    "import-from-html-or-json": "Import from HTML or JSON",
+    "import-from-html-or-json-description": "Import a single recipe from raw HTML or JSON. This is useful if you have a recipe from a site that Mealie can't scrape normally, or from some other external source.",
+    "json-import-format-description-colon": "To import via JSON, it must be in valid format:",
+    "json-editor": "JSON Editor",
     "zip-files-must-have-been-exported-from-mealie": "Zip-filer skal være blevet eksporteret fra Mealie",
     "create-a-recipe-by-uploading-a-scan": "Opret en opskrift ved at uploade en scanning.",
     "upload-a-png-image-from-a-recipe-book": "Upload et billede med en opskrift, f.eks. fra en bog eller en udskrift",
@@ -645,7 +661,8 @@
       "missing-unit": "Opret manglende måleenhed: {unit}",
       "missing-food": "Opret manglende fødevare: {food}",
       "no-food": "Ingen fødevarer"
-    }
+    },
+    "reset-servings-count": "Reset Servings Count"
   },
   "search": {
     "advanced-search": "Avanceret søgning",
@@ -1254,7 +1271,9 @@
     "debug-openai-services": "Debug OpenAI Services",
     "debug-openai-services-description": "Use this page to debug OpenAI services. You can test your OpenAI connection and see the results here. If you have image services enabled, you can also provide an image.",
     "run-test": "Run Test",
-    "test-results": "Test Results"
+    "test-results": "Test Results",
+    "group-delete-note": "Groups with users or households cannot be deleted",
+    "household-delete-note": "Households with users cannot be deleted"
   },
   "profile": {
     "welcome-user": "👋 Velkommen, {0}!",
@@ -1307,7 +1326,7 @@
   },
   "cookbook": {
     "cookbooks": "Kogebøger",
-    "description": "Kogebøger er en anden måde at organisere opskrifter ved at oprette en samling af opskrifter og mærker. Oprettelse af en kogebog vil tilføje et link i sidemenuen til kogebogen. Alle opskrifter med de valgte mærker og kategorier vil blive vist i kogebogen.",
+    "description": "Cookbooks are another way to organize recipes by creating cross sections of recipes, organizers, and other filters. Creating a cookbook will add an entry to the side-bar and all the recipes with the filters chosen will be displayed in the cookbook.",
     "public-cookbook": "Offentlig kogebog",
     "public-cookbook-description": "Offentlige kogebøger kan deles med personer, der ikke er oprettet som brugere i Mealie og vil blive vist på din gruppe side.",
     "filter-options": "Filtreringsindstillinger",
@@ -1320,5 +1339,28 @@
     "household-cookbook-name": "{0} Kogebog {1}",
     "create-a-cookbook": "Opret en ny kogebog",
     "cookbook": "Kogebog"
+  },
+  "query-filter": {
+    "logical-operators": {
+      "and": "AND",
+      "or": "OR"
+    },
+    "relational-operators": {
+      "equals": "equals",
+      "does-not-equal": "does not equal",
+      "is-greater-than": "is greater than",
+      "is-greater-than-or-equal-to": "is greater than or equal to",
+      "is-less-than": "is less than",
+      "is-less-than-or-equal-to": "is less than or equal to"
+    },
+    "relational-keywords": {
+      "is": "is",
+      "is-not": "is not",
+      "is-one-of": "is one of",
+      "is-not-one-of": "is not one of",
+      "contains-all-of": "contains all of",
+      "is-like": "is like",
+      "is-not-like": "is not like"
+    }
   }
 }

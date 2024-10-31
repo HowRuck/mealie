@@ -182,6 +182,7 @@
     "date": "Dátum",
     "id": "Azonosító",
     "owner": "Tulajdonos",
+    "change-owner": "Tulajdonos módosítása",
     "date-added": "Hozzáadás Dátuma",
     "none": "Nincs",
     "run": "Futtatás",
@@ -212,7 +213,11 @@
     "clipboard-copy-failure": "Nem sikerült a vágólapra másolás.",
     "confirm-delete-generic-items": "Biztos benne, hogy törölni szeretné az alábbi tételeket?",
     "organizers": "Rendszerezők",
-    "caution": "Figyelmeztetés"
+    "caution": "Figyelmeztetés",
+    "show-advanced": "Haladó beállítások megjelenítése",
+    "add-field": "Mező hozzáadása",
+    "date-created": "Létrehozás dátuma",
+    "date-updated": "Frissítés dátuma"
   },
   "group": {
     "are-you-sure-you-want-to-delete-the-group": "Biztosan törölni szeretnéd ezt: <b>{groupName}<b/>?",
@@ -315,10 +320,10 @@
     "mealplan-settings": "Menütervező beállításai",
     "mealplan-update-failed": "Menüterv módosítása sikertelen",
     "mealplan-updated": "Menüterv módosítva",
-    "mealplan-households-description": "If no household is selected, recipes can be added from any household",
-    "any-category": "Any Category",
-    "any-tag": "Any Tag",
-    "any-household": "Any Household",
+    "mealplan-households-description": "Ha nincs háztartás kiválasztva, a receptek bármelyik háztartásból hozzáadhatók",
+    "any-category": "Bármely kategória",
+    "any-tag": "Bármelyik címke",
+    "any-household": "Bármely háztartás",
     "no-meal-plan-defined-yet": "Nincs még menüterv létrehozva",
     "no-meal-planned-for-today": "Nincs mára menüterv",
     "numberOfDays-hint": "Napok száma az oldal betöltésekor",
@@ -351,7 +356,7 @@
     "for-type-meal-types": "{0} étkezés fajtához",
     "meal-plan-rules": "Menüterv szabályok",
     "new-rule": "Új szabály",
-    "meal-plan-rules-description": "A menütervekhez szükséges receptek automatikus kiválasztásához létrehozhat szabályokat. Ezeket a szabályokat a kiszolgáló arra használja, hogy meghatározza a receptek véletlenszerű választékát, amelyből a menütervek létrehozásakor választani fog. Vegye figyelembe, hogy ha a szabályoknak azonos nap/típus megkötései vannak, akkor a szabályok kategóriái összevonásra kerülnek. A gyakorlatban nem szükséges duplikált szabályokat létrehozni, de lehetséges.",
+    "meal-plan-rules-description": "A menütervekhez szükséges receptek automatikus kiválasztásához létrehozhat szabályokat. Ezeket a szabályokat a kiszolgáló arra használja, hogy meghatározza a receptek véletlenszerű választékát, amelyből a menütervek létrehozásakor választania kell. Vegye figyelembe, hogy ha a szabályoknak azonos nap/típus megkötései vannak, akkor a szabályszűrők összevonásra kerülnek. A gyakorlatban nem szükséges duplikált szabályokat létrehozni, de lehetséges.",
     "new-rule-description": "Amikor új szabályt hoz létre egy menütervhez, korlátozhatja a szabályt, hogy a hét egy adott napjára és/vagy egy adott típusú étkezésre vonatkozzon. Ha egy szabályt minden napra vagy étkezési típusra alkalmazni szeretne, akkor a szabályt \"Bármely\" értékre állíthatja be, amely azt az adott nap és/vagy étkezési típus összes lehetséges értékére alkalmazza.",
     "recipe-rules": "Recept szabályok",
     "applies-to-all-days": "Minden napra vonatkozóan",
@@ -426,6 +431,7 @@
     "paste-in-your-recipe-data-each-line-will-be-treated-as-an-item-in-a-list": "Másold be a receptedet. Minden sor egy új elemként lesz kezelve a listában",
     "recipe-markup-specification": "Receptjelölési előírás",
     "recipe-url": "Recept URL",
+    "recipe-html-or-json": "Recipe HTML or JSON",
     "upload-a-recipe": "Recept feltöltése",
     "upload-individual-zip-file": "Tölts fel egy .zíp archívumot, ami egy másik Mealie példányból lett exportálva.",
     "url-form-hint": "Másold be a linket a kedvenc recept weboldaladról",
@@ -460,6 +466,7 @@
     "calories-suffix": "kalória",
     "carbohydrate-content": "Szénhidrát",
     "categories": "Kategóriák",
+    "cholesterol-content": "Koleszterin",
     "comment-action": "Megjegyzés",
     "comment": "Megjegyzés",
     "comments": "Megjegyzések",
@@ -506,6 +513,7 @@
     "recipe-updated": "Recept frissítve",
     "remove-from-favorites": "Eltávolítás kedvencekből",
     "remove-section": "Szakasz eltávolítása",
+    "saturated-fat-content": "Telített zsírsav",
     "save-recipe-before-use": "Recept mentése használat előtt",
     "section-title": "Szakasz címe",
     "servings": "Adag",
@@ -516,7 +524,9 @@
     "sugar-content": "Cukor",
     "title": "Cím",
     "total-time": "Teljes idő",
+    "trans-fat-content": "Transzzsírsav",
     "unable-to-delete-recipe": "Nem lehet törölni a receptet",
+    "unsaturated-fat-content": "Telítetlen zsírsav",
     "no-recipe": "Nincs recept",
     "locked-by-owner": "A tulajdonos által zárolva",
     "join-the-conversation": "Csatlakozzon a beszélgetéshez",
@@ -604,10 +614,16 @@
     "scrape-recipe-description": "Recept (adatok) kinyerése Url alapján. Adja meg a beolvasni kívánt oldal Url-címét, és Mealie megpróbálja beolvasni a receptet az adott oldalról, majd hozzáadja azt gyűjteményéhez.",
     "scrape-recipe-have-a-lot-of-recipes": "Sok receptje van, amit egyszerre szeretne átvenni?",
     "scrape-recipe-suggest-bulk-importer": "Próbálja ki a tömeges importálót",
+    "scrape-recipe-have-raw-html-or-json-data": "Nyers HTML vagy JSON adatai vannak?",
+    "scrape-recipe-you-can-import-from-raw-data-directly": "A nyers adatokból közvetlenül is importálhat",
     "import-original-keywords-as-tags": "Eredeti kulcsszavak importálása címkeként",
     "stay-in-edit-mode": "Maradjon Szerkesztés módban",
     "import-from-zip": "Importálás ZIP-ből",
     "import-from-zip-description": "Egy másik Mealie-példányból kiexportált recept egyedi importálása.",
+    "import-from-html-or-json": "Importálás HTML vagy JSON fájlból",
+    "import-from-html-or-json-description": "Egyetlen recept importálása nyers HTML vagy JSON formátumból. Ez akkor hasznos, ha olyan oldalról származik egy recept, vagy más külső forrásból, amelyet a Mealie nem tud normálisan beolvasni.",
+    "json-import-format-description-colon": "A JSON-on keresztül történő importáláshoz érvényes formátumban kell lennie:",
+    "json-editor": "JSON szerkesztő",
     "zip-files-must-have-been-exported-from-mealie": "A.zip fájlokat Mealie-ból kell exportálni",
     "create-a-recipe-by-uploading-a-scan": "Recept létrehozása szkennelt dokumentum feltöltésével.",
     "upload-a-png-image-from-a-recipe-book": "Png kép feltöltése egy szakácskönyvből",
@@ -645,7 +661,8 @@
       "missing-unit": "Hiányzó mértékegység létrehozása: {unit}",
       "missing-food": "Hiányzó élelmiszer létrehozása: {food}",
       "no-food": "Élelmiszer nélküli"
-    }
+    },
+    "reset-servings-count": "Adagok számának visszaállítása"
   },
   "search": {
     "advanced-search": "Részletes keresés",
@@ -1254,7 +1271,9 @@
     "debug-openai-services": "OpenAI-szolgáltatások hibakeresése",
     "debug-openai-services-description": "Ezt az oldalt az OpenAI szolgáltatások hibakeresésére használhatja. Itt tesztelheti az OpenAI-kapcsolatot, és láthatja az eredményeket. Ha engedélyezte a képszolgáltatásokat, akkor képet is megadhat.",
     "run-test": "Teszt futtatása",
-    "test-results": "Teszt eredmények"
+    "test-results": "Teszt eredmények",
+    "group-delete-note": "Groups with users or households cannot be deleted",
+    "household-delete-note": "Households with users cannot be deleted"
   },
   "profile": {
     "welcome-user": "👋 Üdvözöljük, {0}!",
@@ -1307,7 +1326,7 @@
   },
   "cookbook": {
     "cookbooks": "Szakácskönyvek",
-    "description": "A szakácskönyvek egy másik módja a receptek rendszerezésének a receptek és címkék metszeteinek összeállításával. Egy szakácskönyv létrehozása egy bejegyzést ad az oldalsávhoz, és a kiválasztott címkékkel és kategóriákkal rendelkező összes recept megjelenik a szakácskönyvben.",
+    "description": "A szakácskönyvek egy másik módja a receptek rendszerezésének a receptek, szervezők és egyéb szűrők keresztmetszeteinek létrehozásával. Egy szakácskönyv létrehozása egy bejegyzést ad az oldalsávhoz, és a kiválasztott szűrőkkel rendelkező összes recept megjelenik a szakácskönyvben.",
     "public-cookbook": "Nyilvános szakácskönyv",
     "public-cookbook-description": "A nyilvános szakácskönyvek megoszthatók a nem mealie felhasználókkal, és megjelennek a csoportod oldalán.",
     "filter-options": "Szűrési beállítások",
@@ -1320,5 +1339,28 @@
     "household-cookbook-name": "{0} Szakácskönyv {1}",
     "create-a-cookbook": "Szakácskönyv létrehozása",
     "cookbook": "Szakácskönyv"
+  },
+  "query-filter": {
+    "logical-operators": {
+      "and": "ÉS",
+      "or": "VAGY"
+    },
+    "relational-operators": {
+      "equals": "egyenlő",
+      "does-not-equal": "nem egyenlő",
+      "is-greater-than": "nagyobb, mint",
+      "is-greater-than-or-equal-to": "nagyobb vagy egyenlő",
+      "is-less-than": "kevesebb, mint",
+      "is-less-than-or-equal-to": "kevesebb vagy egyenlő"
+    },
+    "relational-keywords": {
+      "is": "van",
+      "is-not": "nem",
+      "is-one-of": "egy ebből",
+      "is-not-one-of": "nem az egyike",
+      "contains-all-of": "tartalmazza az összes",
+      "is-like": "hasonló",
+      "is-not-like": "nem hasonló"
+    }
   }
 }

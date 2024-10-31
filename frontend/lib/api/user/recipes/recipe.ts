@@ -32,10 +32,11 @@ const routes = {
   recipesCreate: `${prefix}/recipes/create`,
   recipesBase: `${prefix}/recipes`,
   recipesTestScrapeUrl: `${prefix}/recipes/test-scrape-url`,
-  recipesCreateUrl: `${prefix}/recipes/create-url`,
-  recipesCreateUrlBulk: `${prefix}/recipes/create-url/bulk`,
-  recipesCreateFromZip: `${prefix}/recipes/create-from-zip`,
-  recipesCreateFromImage: `${prefix}/recipes/create-from-image`,
+  recipesCreateUrl: `${prefix}/recipes/create/url`,
+  recipesCreateUrlBulk: `${prefix}/recipes/create/url/bulk`,
+  recipesCreateFromZip: `${prefix}/recipes/create/zip`,
+  recipesCreateFromImage: `${prefix}/recipes/create/image`,
+  recipesCreateFromHtmlOrJson: `${prefix}/recipes/create/html-or-json`,
   recipesCategory: `${prefix}/recipes/category`,
   recipesParseIngredient: `${prefix}/parser/ingredient`,
   recipesParseIngredients: `${prefix}/parser/ingredients`,
@@ -134,6 +135,10 @@ export class RecipeAPI extends BaseCRUDAPI<CreateRecipe, Recipe, Recipe> {
     return await this.requests.post<Recipe | null>(routes.recipesTestScrapeUrl, { url, useOpenAI });
   }
 
+  async createOneByHtmlOrJson(data: string, includeTags: boolean) {
+    return await this.requests.post<string>(routes.recipesCreateFromHtmlOrJson, { data, includeTags });
+  }
+
   async createOneByUrl(url: string, includeTags: boolean) {
     return await this.requests.post<string>(routes.recipesCreateUrl, { url, includeTags });
   }
@@ -171,6 +176,14 @@ export class RecipeAPI extends BaseCRUDAPI<CreateRecipe, Recipe, Recipe> {
 
   getZipRedirectUrl(recipeSlug: string, token: string) {
     return `${routes.recipesRecipeSlugExportZip(recipeSlug)}?token=${token}`;
+  }
+
+  async updateMany(payload: Recipe[]) {
+    return await this.requests.put<Recipe[]>(routes.recipesBase, payload);
+  }
+
+  async patchMany(payload: Recipe[]) {
+    return await this.requests.patch<Recipe[]>(routes.recipesBase, payload);
   }
 
   async updateLastMade(recipeSlug: string, timestamp: string) {

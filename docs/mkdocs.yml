@@ -1,6 +1,6 @@
 site_name: Mealie
 demo_url: https://demo.mealie.io
-site_url: https://hay-kot.github.io/mealie/
+site_url: https://docs.mealie.io
 use_directory_urls: true
 theme:
   palette:
@@ -81,7 +81,7 @@ nav:
 
       - Authentication:
           - LDAP: "documentation/getting-started/authentication/ldap.md"
-          - OpenID Connect: "documentation/getting-started/authentication/oidc.md"
+          - OpenID Connect: "documentation/getting-started/authentication/oidc-v2.md"
 
       - Community Guides:
           - iOS Shortcuts: "documentation/community-guide/ios.md"

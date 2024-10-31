@@ -182,6 +182,7 @@
     "date": "Data",
     "id": "Id",
     "owner": "Proprietario",
+    "change-owner": "Change Owner",
     "date-added": "Data Aggiunta",
     "none": "Nessuno",
     "run": "Avvia",
@@ -212,7 +213,11 @@
     "clipboard-copy-failure": "Impossibile copiare negli appunti.",
     "confirm-delete-generic-items": "Sei sicuro di voler eliminare i seguenti elementi?",
     "organizers": "Organizzatori",
-    "caution": "Attenzione"
+    "caution": "Attenzione",
+    "show-advanced": "Show Advanced",
+    "add-field": "Add Field",
+    "date-created": "Date Created",
+    "date-updated": "Date Updated"
   },
   "group": {
     "are-you-sure-you-want-to-delete-the-group": "Sei sicuro di volerlo eliminare <b>{groupName}<b/>'?",
@@ -351,7 +356,7 @@
     "for-type-meal-types": "per {0} tipi di pasto",
     "meal-plan-rules": "Regole del piano alimentare",
     "new-rule": "Nuova regola",
-    "meal-plan-rules-description": "Puoi creare regole per la selezione automatica delle ricette per i tuoi piani alimentari. Queste regole vengono utilizzate dal server per determinare le ricette da selezionare durante la creazione dei piani alimentari. Tieni presente che se le regole hanno gli stessi vincoli di giorno/tipo, le categorie delle regole verranno unite. In pratica non è necessario creare regole duplicate, ma è possibile farlo.",
+    "meal-plan-rules-description": "You can create rules for auto selecting recipes for your meal plans. These rules are used by the server to determine the random pool of recipes to select from when creating meal plans. Note that if rules have the same day/type constraints then the rule filters will be merged. In practice, it's unnecessary to create duplicate rules, but it's possible to do so.",
     "new-rule-description": "Quando si crea una nuova regola per un piano alimentare è possibile limitare la sua applicazione ad un giorno specifico della settimana e/o un tipo specifico di pasto. Per applicare una regola a tutti i giorni o a tutti i tipi di pasto, è possibile impostare la regola a \"Qualsiasi\", applicandola a tutti i possibili valori per il tipo di giorno e/o di pasto.",
     "recipe-rules": "Regole per le ricette",
     "applies-to-all-days": "Si applica a ogni giorno",
@@ -426,6 +431,7 @@
     "paste-in-your-recipe-data-each-line-will-be-treated-as-an-item-in-a-list": "Inserisci i dati della tua ricetta. Ogni riga sarà trattata come uno step della ricetta.",
     "recipe-markup-specification": "Specifiche Markup Ricetta",
     "recipe-url": "URL Ricetta",
+    "recipe-html-or-json": "Ricetta HTML o JSON",
     "upload-a-recipe": "Carica una Ricetta",
     "upload-individual-zip-file": "Carica un singolo file .zip esportato da un'altra istanza di Mealie.",
     "url-form-hint": "Copia e incolla un link dal tuo sito di ricette preferito",
@@ -460,6 +466,7 @@
     "calories-suffix": "calorie",
     "carbohydrate-content": "Carboidrati",
     "categories": "Categorie",
+    "cholesterol-content": "Cholesterol",
     "comment-action": "Commento",
     "comment": "Commento",
     "comments": "Commenti",
@@ -506,6 +513,7 @@
     "recipe-updated": "Ricetta aggiornata",
     "remove-from-favorites": "Rimuovi dai Preferiti",
     "remove-section": "Rimuovi Sezione",
+    "saturated-fat-content": "Saturated fat",
     "save-recipe-before-use": "Salva la ricetta prima dell'uso",
     "section-title": "Titolo Sezione",
     "servings": "Portate",
@@ -516,7 +524,9 @@
     "sugar-content": "Zuccheri",
     "title": "Titolo",
     "total-time": "Tempo Totale",
+    "trans-fat-content": "Trans-fat",
     "unable-to-delete-recipe": "Impossibile eliminare ricetta",
+    "unsaturated-fat-content": "Unsaturated fat",
     "no-recipe": "Nessuna Ricetta",
     "locked-by-owner": "Bloccato dal Proprietario",
     "join-the-conversation": "Unisciti alla conversazione",
@@ -604,10 +614,16 @@
     "scrape-recipe-description": "Recupera una ricetta da url. Fornire l'url per il sito che si desidera analizzare, e Mealie cercherà di recuperare la ricetta da quel sito e aggiungerlo alla vostra raccolta.",
     "scrape-recipe-have-a-lot-of-recipes": "Hai un sacco di ricette che vuoi importare contemporaneamente?",
     "scrape-recipe-suggest-bulk-importer": "Prova l'importatore massivo",
+    "scrape-recipe-have-raw-html-or-json-data": "Hai dei dati grezzi HTML o JSON?",
+    "scrape-recipe-you-can-import-from-raw-data-directly": "You can import from raw data directly",
     "import-original-keywords-as-tags": "Importa parole chiave originali come tag",
     "stay-in-edit-mode": "Rimani in modalità Modifica",
     "import-from-zip": "Importa da Zip",
     "import-from-zip-description": "Importa una singola ricetta esportata da un'altra istanza di Mealie.",
+    "import-from-html-or-json": "Import from HTML or JSON",
+    "import-from-html-or-json-description": "Import a single recipe from raw HTML or JSON. This is useful if you have a recipe from a site that Mealie can't scrape normally, or from some other external source.",
+    "json-import-format-description-colon": "To import via JSON, it must be in valid format:",
+    "json-editor": "JSON Editor",
     "zip-files-must-have-been-exported-from-mealie": "I file .zip devono essere stati esportati da Mealie",
     "create-a-recipe-by-uploading-a-scan": "Crea una ricetta caricando una scansione.",
     "upload-a-png-image-from-a-recipe-book": "Carica un'immagine png da un libro di ricette",
@@ -645,7 +661,8 @@
       "missing-unit": "Crea unità mancante: {unit}",
       "missing-food": "Crea cibo mancante: {food}",
       "no-food": "Nessun Alimento"
-    }
+    },
+    "reset-servings-count": "Reset Servings Count"
   },
   "search": {
     "advanced-search": "Ricerca Avanzata",
@@ -1254,7 +1271,9 @@
     "debug-openai-services": "Debug Dei Servizi OpenAI",
     "debug-openai-services-description": "Usa questa pagina per fare debug dei servizi OpenAI. Puoi testare la tua connessione OpenAI e vedere i risultati qui. Se si dispone di servizi di immagine abilitati, è anche possibile fornire un'immagine.",
     "run-test": "Esegui test",
-    "test-results": "Risultati dei test"
+    "test-results": "Risultati dei test",
+    "group-delete-note": "Groups with users or households cannot be deleted",
+    "household-delete-note": "Households with users cannot be deleted"
   },
   "profile": {
     "welcome-user": "👋 Benvenutǝ, {0}!",
@@ -1307,7 +1326,7 @@
   },
   "cookbook": {
     "cookbooks": "Ricettari",
-    "description": "I Ricettari sono un modo diverso di organizzare ricette creando sezioni trasversali di ricette e tag. La creazione di un ricettario aggiungerà una voce alla barra laterale e tutte le ricette con i tag e le categorie selezionate saranno visualizzate al suo interno.",
+    "description": "Cookbooks are another way to organize recipes by creating cross sections of recipes, organizers, and other filters. Creating a cookbook will add an entry to the side-bar and all the recipes with the filters chosen will be displayed in the cookbook.",
     "public-cookbook": "Ricettario Pubblico",
     "public-cookbook-description": "I ricettari pubblici possono essere condivisi con gli utenti non-mealie e saranno visualizzati nella pagina dei gruppi.",
     "filter-options": "Opzioni Filtro",
@@ -1320,5 +1339,28 @@
     "household-cookbook-name": "{0} Cookbook {1}",
     "create-a-cookbook": "Crea un libro di cucina",
     "cookbook": "Libro di cucina"
+  },
+  "query-filter": {
+    "logical-operators": {
+      "and": "AND",
+      "or": "OR"
+    },
+    "relational-operators": {
+      "equals": "equals",
+      "does-not-equal": "does not equal",
+      "is-greater-than": "is greater than",
+      "is-greater-than-or-equal-to": "is greater than or equal to",
+      "is-less-than": "is less than",
+      "is-less-than-or-equal-to": "is less than or equal to"
+    },
+    "relational-keywords": {
+      "is": "is",
+      "is-not": "is not",
+      "is-one-of": "is one of",
+      "is-not-one-of": "is not one of",
+      "contains-all-of": "contains all of",
+      "is-like": "is like",
+      "is-not-like": "is not like"
+    }
   }
 }
